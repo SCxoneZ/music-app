@@ -4,19 +4,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>About Page</title>
+  <title>Music-App</title>
   <link rel="stylesheet" href="styles/navigation.css">
+  <link rel="stylesheet" href="styles/index.css">
 </head>
 
 <body>
 
 <nav>
   <a href="search.html">Search</a>
-  <a href="favorit.html">Favorit</a>
+  <a href="favorit.html">Favorite</a>
   <a href="about.html">About</a>
 </nav>
 
 <div class="content">
+  <div class="music-poster"></div>
+  <div class="title">Ghost</div>
+  <div class="play-button"></div>
 </div>
 
 
