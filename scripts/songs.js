@@ -7,7 +7,7 @@ export default
     'size': '2.48 MB',
     'directory': {
       'song': '../music/ghost.mp3',
-      'poster': '../img/song/ghost.jepg'
+      'poster': 'img/song/ghost.jpeg'
     }
   },
   {
@@ -17,7 +17,7 @@ export default
     'size': '3.53 MB',
     'directory': {
       'song': '../music/traitor.mp3',
-      'poster': '../img/song/traitor.jepg'
+      'poster': 'img/song/traitor.jpeg'
     }
   }
 ];

@@ -15,14 +15,42 @@ songs.forEach(el => {
   const cardEl = document.createElement('div');
   cardEl.classList.add('card');
   
-  const posterEl = document.createElement('div');
+  const posterEl = document.createElement('img');
   posterEl.classList.add('poster');
   posterEl.classList.add(el.title);
-  const poster = document.querySelector(`.${el.title}`);
-  poster.style.backgroundImage = `url(${el.directory.poster})`;
+  posterEl.setAttribute('src', el.directory.poster);
   
+  const details = document.createElement('div');
+  details.classList.add('details');
   
-  posterEl.classList.add('poster');
+  const title = document.createElement('div');
+  title.classList.add('title');
+  title.innerHTML = el.title;
+  
+  const author = document.createElement('div');
+  author.classList.add('author');
+  author.innerHTML = el.author;
+  
+  const btnWrapper = document.createElement('div');
+  const btn = document.createElement('button');
+  btnWrapper.classList.add('button-wrapper');
+  btnWrapper.appendChild(btn);
+  
+  details.appendChild(title);
+  details.appendChild(author);
+  details.appendChild(btnWrapper);
 
   cardEl.appendChild(posterEl);
+  cardEl.appendChild(details);
+  
+  content.appendChild(cardEl);
 });
+
+if(songs.length > 0){
+  const listenBtns = document.querySelectorAll('.button-wrapper button');
+  listenBtns.forEach(btn => {
+    btn.addEventListener('click', e => {
+      window.location.href = 'index.html';
+    });
+  });
+}
