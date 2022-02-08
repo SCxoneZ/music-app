@@ -11,9 +11,10 @@
 import songs from './songs.js';
 const content = document.querySelector('.content');
 
-songs.forEach(el => {
+songs.forEach((el, i) => {
   const cardEl = document.createElement('div');
   cardEl.classList.add('card');
+  cardEl.dataset.index = i;
   
   const posterEl = document.createElement('img');
   posterEl.classList.add('poster');
@@ -50,6 +51,7 @@ if(songs.length > 0){
   const listenBtns = document.querySelectorAll('.button-wrapper button');
   listenBtns.forEach(btn => {
     btn.addEventListener('click', e => {
+      localStorage.setItem('index', e.target.parentElement.parentElement.parentElement.dataset.index);
       window.location.href = 'index.html';
     });
   });
