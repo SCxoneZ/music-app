@@ -6,8 +6,9 @@ body{
   margin: 0;
 }
 
-nav{
+.nav{
   background: #42445A;
+  width: 100%;
   height: 50px;
   font-size: 20px;
   display: flex;
@@ -18,7 +19,7 @@ nav{
   margin-bottom: 25px;
 }
 
-nav a {
+.nav a {
   color: #B7B7B7;
   text-decoration: none;
 }
