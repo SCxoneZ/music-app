@@ -51,7 +51,7 @@ if(songs.length > 0){
   const listenBtns = document.querySelectorAll('.button-wrapper button');
   listenBtns.forEach(btn => {
     btn.addEventListener('click', e => {
-      localStorage.setItem('index', e.target.parentElement.parentElement.parentElement.dataset.index);
+      localStorage.setItem('index', parseInt(e.target.parentElement.parentElement.parentElement.dataset.index));
       window.location.href = 'index.html';
     });
   });

@@ -29,8 +29,13 @@ body{
   height: 50px;
   box-shadow: 0 0 10px rgba(0,0,0,0.3);
   border-radius: 100%;
-  background-image: url(../img/play.png);
-  background-size: 20px;
-  background-repeat: no-repeat;
-  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #BABABA;
+}
+
+.content .play-button img{
+  width: 25px;
+  height: 25px;
 }

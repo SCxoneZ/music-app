@@ -19,5 +19,15 @@ export default
       'song': '../music/traitor.mp3',
       'poster': 'img/song/traitor.jpeg'
     }
+  },
+  {
+    'title': 'Unconditionally',
+    'author': 'Katy Perry',
+    'duration': '03:50',
+    'size': '3.55 MB',
+    'directory': {
+      'song': '../music/unconditionally.mp3',
+      'poster': 'img/song/unconditionally.jpeg'
+    }
   }
 ];
