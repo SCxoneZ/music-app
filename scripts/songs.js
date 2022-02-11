@@ -12,7 +12,7 @@ export default
   },
   {
     'title': 'Traitor',
-    'author': 'Olivia Rodriogo',
+    'author': 'Olivia Rodrigo',
     'duration': '03:49',
     'size': '3.53 MB',
     'directory': {
