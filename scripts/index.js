@@ -1,6 +1,6 @@
 import songs from './songs.js';
 
-if(localStorage.getItem('index')){
+if (localStorage.getItem('index')) {
   // audio that will be call in play listener
   // using var because of scope
   var audio = new Audio(songs[parseInt(localStorage.getItem('index'))].directory.song);
@@ -8,45 +8,55 @@ if(localStorage.getItem('index')){
 
 // select items in document
 const poster = document.querySelector('.music-poster'),
-title = document.querySelector('.title'),
-play = document.querySelector('.play-button'),
-playImg = document.querySelector('.play-button img'),
-replay = document.querySelector('.replay-button'),
-lyricsWrapper = document.querySelector('.lyrics-wrapper');
+  title = document.querySelector('.title'),
+  play = document.querySelector('.play-button'),
+  playImg = document.querySelector('.play-button img'),
+  replay = document.querySelector('.replay-button'),
+  lyricsWrapper = document.querySelector('.lyrics-wrapper');
 
-if(localStorage.getItem('index')){
-  
+if (localStorage.getItem('index')) {
+
   // changing the poster and title
   poster.src = songs[parseInt(localStorage.getItem('index'))].directory.poster;
   title.innerHTML = songs[parseInt(localStorage.getItem('index'))].title;
-  
+
   // play button listener
   play.addEventListener('click', async e => {
-    
-    if(audio.paused){
+
+    if (audio.paused) {
       await audio.play();
       playImg.setAttribute('src', 'img/pause.png');
-    }else{
+    } else {
       await audio.pause();
       playImg.setAttribute('src', 'img/play.png')
     }
-    
+
   });
-  
+
   // replay Buton event listener
   replay.addEventListener('click', () => {
     audio.currentTime = 0;
   });
-  
-  
+
+
   // fetching lyrics
   fetch(`https://api.lyrics.ovh/v1/${songs[parseInt(localStorage.getItem('index'))].author}/${songs[parseInt(localStorage.getItem('index'))].title}`)
     .then(res => res.json())
     .then(data => {
+      lyricsWrapper.style.backgroundColor = getRandomHex();
       lyricsWrapper.innerText = data.lyrics.replace(`Paroles de la chanson ${songs[parseInt(localStorage.getItem('index'))].title} par ${songs[parseInt(localStorage.getItem('index'))].author}\r\n`, '');
     });
+    
+  function getRandomHex(){
   
+  const char = ['1', 'A', '6', 'F', '5', 'B', '8', 'E', '9', 'C', '0', '3', '2', 'D', '4', '7'];
+  
+  return `#${char[Math.floor(Math.random()*char.length)]}${char[Math.floor(Math.random()*char.length)]}${char[Math.floor(Math.random()*char.length)]}${char[Math.floor(Math.random()*char.length)]}${char[Math.floor(Math.random()*char.length)]}${char[Math.floor(Math.random()*char.length)]}`;
 }
+
+
+}
+
 
 // https://api.lyrics.ovh/v1/justin%20bieber/ghost
 // https://api.lyrics.ovh/suggest/ghost

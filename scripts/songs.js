@@ -29,5 +29,15 @@ export default
       'song': '../music/unconditionally.mp3',
       'poster': 'img/song/unconditionally.jpeg'
     }
+  },
+  {
+    'title': `Long Drives`,
+    'author': 'BoyWithUke',
+    'duration': '02:40',
+    'size': '2.47 MB',
+    'directory': {
+      'song': '../music/longDrives.mp3',
+      'poster': 'img/song/longDrives.jpeg'
+    }
   }
 ];

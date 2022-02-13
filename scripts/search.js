@@ -18,7 +18,6 @@ songs.forEach((el, i) => {
   
   const posterEl = document.createElement('img');
   posterEl.classList.add('poster');
-  posterEl.classList.add(el.title);
   posterEl.setAttribute('src', el.directory.poster);
   
   const details = document.createElement('div');
@@ -26,11 +25,11 @@ songs.forEach((el, i) => {
   
   const title = document.createElement('div');
   title.classList.add('title');
-  title.innerHTML = el.title;
+  title.innerText = el.title;
   
   const author = document.createElement('div');
   author.classList.add('author');
-  author.innerHTML = el.author;
+  author.innerText = el.author;
   
   const btnWrapper = document.createElement('div');
   const btn = document.createElement('button');
